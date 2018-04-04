@@ -1,5 +1,5 @@
 // firebase url of your account 
-const crud = new Firebase('https://backhome-examples.firebaseio.com/crud_car_examples');
+const crud = new Firebase('https://backhome-examples.firebaseio.com/crud_car_examples/');
 
 
 
