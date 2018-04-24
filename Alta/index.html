@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Parts | Oxxo Parts Control</title>
+    <!-- Favicon -->
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+
+
+
+</head>
+<!---->
+
+<body class="padding_none theme-red " id="body_st" onload="carga()">
+
+    <!-- ======================================= Inicia los datos =========================================  -->
+
+    <section class="content">
+        <div class="container-fluid" style="margin-left: 0px !important; margin-right: 0px!important;">
+
+            <input type="hidden" name="userID" id="userID" value="" />
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                Piezas
+                            </h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li>
+                                            <a data-toggle="modal" data-target="#myModal_n" class="t_centro">
+                                                <i class="material-icons">autorenew</i>Nuevo
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div class="table-container" id="loader_m" align="center"></div>
+                            <div class="table-container" id="datatable" align="center">
+                                <table class="table table-bordered table-striped" id="tabla" style="margin-left: 0px !important;">
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- #END# blog -->
+        </div>
+    </section>
+
+
+    <!-- ===================================================== Nuevo =================================================-->
+
+    <div id="myModal_n" class="modal fade" role="dialog">
+        <form id="car">
+            <div class="modal-dialog">
+                <div class="modal-content" id="r_edit">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" style="margin-left: 5px;">X</button>
+                        <h5 class="modal-title" style="text-align:center" id="tit">
+                            <strong id="title_name">Nueva pieza</strong>
+                        </h5>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="col-md-12 col-xs-12">
+                        <div class="col-md-6 col-xs-6">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">subtitles</i>
+                                </span>
+                                <div class="form-line">
+                                    <input class="form-control validate" placeholder="Title" type="text" name="Name" id="Name" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">view_module</i>
+                                </span>
+                                <div class="form-line">
+                                    <input class="form-control validate" placeholder="Client" type="text" name="Model" id="Model" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-xs-12">
+                        <div class="col-md-6 col-xs-6">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">description</i>
+                                </span>
+                                <div class="form-line">
+                                    <textarea class="form-control validate" placeholder="Descripcion" type="text" name="Description" id="Description" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">supervisor_account</i>
+                                </span>
+                                <div class="form-line">
+                                    <input class="form-control validate" placeholder="Url Visit" type="text" name="Provider" id="Provider" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-xs-12">
+                        <div class="col-md-6 col-xs-6">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">format_list_numbered</i>
+                                </span>
+                                <div class="form-line">
+                                    <input class="form-control validate" placeholder="DateCreate" type="date" name="Stock" id="Stock" required min="1"
+                                        value="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">add_to_photos</i>
+                                </span>
+                                <div class="form-line">
+                                    <select class="form-control validate" name="Image" id="Image" required>
+                                        <option>Content Management System</option>
+                                        <option>Content Management System</option>
+                                        <option>Control System</option>
+                                        <option>E Commerce</option>
+                                        <option>Embedded System</option>
+                                        <option>Landing Page</option>
+                                        <option>Bot Facebook</option>
+                                        <option>Application</option>
+                                        <option>Push Notifications System</option>
+                                        <option>SMS System</option>
+                                    </select>
+                                </div>
+                                <p id="Image_text" style="display: none;">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="padding-top: 150px !important; ">
+                        <a class="btn btn-success" id="btn_car" onclick="n_car()">
+                            <i class="material-icons">add_alert</i> Guardar</a>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            <i class="material-icons">clear</i> Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- ===================================== modal ver imagen ========================================================== -->
+
+    <div id="modal-ver" class="modal fade " role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" style="margin-left: 5px;">X</button>
+                    <h5 class="modal-title" style="text-align:center" id="name_ver_modal"></h5>
+                    <strong id="model_ver_modal">Modelo</strong>
+                </div>
+                <br>
+                <div style="text-align:center">
+                    <img id="imagen_ver_modal" style="width:80%; height:auto;">
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================================================== scripts =============================================================== -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+
+    <!-- lazy loader -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.6/jquery.lazy.min.js"></script>
+    <script type="text/javascript" src="https:///cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.6/jquery.lazy.plugins.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+</body>
+
+
+</html>
